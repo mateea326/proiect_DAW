@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Desktop\\FMI UNIBUC\\AN 2\\DAW\\DevCollab\\DevCollab\\DevCollab.csproj": {}
+    "C:\\Users\\User\\Desktop\\DevCollab\\DevCollab\\DevCollab.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Desktop\\FMI UNIBUC\\AN 2\\DAW\\DevCollab\\DevCollab\\DevCollab.csproj": {
+    "C:\\Users\\User\\Desktop\\DevCollab\\DevCollab\\DevCollab.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\FMI UNIBUC\\AN 2\\DAW\\DevCollab\\DevCollab\\DevCollab.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\DevCollab\\DevCollab\\DevCollab.csproj",
         "projectName": "DevCollab",
-        "projectPath": "C:\\Users\\User\\Desktop\\FMI UNIBUC\\AN 2\\DAW\\DevCollab\\DevCollab\\DevCollab.csproj",
+        "projectPath": "C:\\Users\\User\\Desktop\\DevCollab\\DevCollab\\DevCollab.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\FMI UNIBUC\\AN 2\\DAW\\DevCollab\\DevCollab\\obj\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\DevCollab\\DevCollab\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -59,6 +59,10 @@
             "Microsoft.EntityFrameworkCore.Tools": {
               "target": "Package",
               "version": "[6.0.22, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[6.0.16, )"
             }
           },
           "imports": [
