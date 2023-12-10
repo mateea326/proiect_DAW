@@ -9,65 +9,93 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = DevCollab
 build_property.RootNamespace = DevCollab
-build_property.ProjectDir = C:\Users\User\Desktop\DevCollab\DevCollab\
+build_property.ProjectDir = C:\Users\andre\OneDrive\Desktop\proiect_DAW\DevCollab\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\User\Desktop\DevCollab\DevCollab
+build_property.MSBuildProjectDirectory = C:\Users\andre\OneDrive\Desktop\proiect_DAW\DevCollab
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/User/Desktop/DevCollab/DevCollab/Areas/Identity/Pages/_ViewStart.cshtml]
+[C:/Users/andre/OneDrive/Desktop/proiect_DAW/DevCollab/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/DevCollab/DevCollab/Views/Answers/Edit.cshtml]
+[C:/Users/andre/OneDrive/Desktop/proiect_DAW/DevCollab/Views/Answers/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5zd2Vyc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/DevCollab/DevCollab/Views/Categories/Edit.cshtml]
+[C:/Users/andre/OneDrive/Desktop/proiect_DAW/DevCollab/Views/Categories/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/DevCollab/DevCollab/Views/Categories/Index.cshtml]
+[C:/Users/andre/OneDrive/Desktop/proiect_DAW/DevCollab/Views/Categories/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/DevCollab/DevCollab/Views/Categories/New.cshtml]
+[C:/Users/andre/OneDrive/Desktop/proiect_DAW/DevCollab/Views/Categories/New.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xOZXcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/DevCollab/DevCollab/Views/Categories/Show.cshtml]
+[C:/Users/andre/OneDrive/Desktop/proiect_DAW/DevCollab/Views/Categories/Show.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xTaG93LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/DevCollab/DevCollab/Views/Home/Index.cshtml]
+[C:/Users/andre/OneDrive/Desktop/proiect_DAW/DevCollab/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/DevCollab/DevCollab/Views/Home/Privacy.cshtml]
+[C:/Users/andre/OneDrive/Desktop/proiect_DAW/DevCollab/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/DevCollab/DevCollab/Views/Shared/Error.cshtml]
+[C:/Users/andre/OneDrive/Desktop/proiect_DAW/DevCollab/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/DevCollab/DevCollab/Views/Shared/_LoginPartial.cshtml]
+[C:/Users/andre/OneDrive/Desktop/proiect_DAW/DevCollab/Views/Shared/SubjectInfo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFN1YmplY3RJbmZvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/andre/OneDrive/Desktop/proiect_DAW/DevCollab/Views/Shared/_LayoutNou.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXROb3UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/andre/OneDrive/Desktop/proiect_DAW/DevCollab/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/DevCollab/DevCollab/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/andre/OneDrive/Desktop/proiect_DAW/DevCollab/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/DevCollab/DevCollab/Views/_ViewImports.cshtml]
+[C:/Users/andre/OneDrive/Desktop/proiect_DAW/DevCollab/Views/Subjects/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViamVjdHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/andre/OneDrive/Desktop/proiect_DAW/DevCollab/Views/Subjects/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViamVjdHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/andre/OneDrive/Desktop/proiect_DAW/DevCollab/Views/Subjects/IndexNou.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViamVjdHNcSW5kZXhOb3UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/andre/OneDrive/Desktop/proiect_DAW/DevCollab/Views/Subjects/New.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViamVjdHNcTmV3LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/andre/OneDrive/Desktop/proiect_DAW/DevCollab/Views/Subjects/Show.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViamVjdHNcU2hvdy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/andre/OneDrive/Desktop/proiect_DAW/DevCollab/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/DevCollab/DevCollab/Views/_ViewStart.cshtml]
+[C:/Users/andre/OneDrive/Desktop/proiect_DAW/DevCollab/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/DevCollab/DevCollab/Views/Shared/_Layout.cshtml]
+[C:/Users/andre/OneDrive/Desktop/proiect_DAW/DevCollab/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-3m7cu74g33

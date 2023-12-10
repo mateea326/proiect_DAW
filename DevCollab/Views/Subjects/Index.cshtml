@@ -1,0 +1,37 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+<br />
+
+<h2 class="text-center">Afisare subiecte</h2>
+<br />
+
+@if (ViewBag.Message != null)
+{
+    <h2 class="alert-success p-3 rounded-3 text-center mb-5">@ViewBag.Message</h2>
+}
+
+
+<div class="d-flex justify-content-center">
+
+    <a class="btn btn-outline-success" href="/Categories/Index/">Afisare categorii</a>
+    <br />
+
+    <a class="btn btn-outline-success" href="/Subjects/New">Adauga subiect</a>
+    <br />
+</div>
+<br />
+
+@foreach (DevCollab.Models.Subject subject in ViewBag.Subjects)
+{
+    <div class="card">
+
+        @Html.Partial("SubjectInfo", subject)
+
+        <a class="btn btn-success" href="/Subjects/Show/@subject.Id">Afisare subiect</a>
+    </div>
+    <br />
+    <br />
+}
+
+

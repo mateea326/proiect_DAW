@@ -14,11 +14,7 @@ namespace DevCollab.Models
 
         public DateTime Date { get; set; }
 
-        public int? ArticleId { get; set; }
-
-        //public string? UserId { get; set; } //foreign key
-
-        //public virtual ApplicationUser User { get; set; }
+        public int? SubjectId { get; set; }
 
         public virtual Subject? Subject { get; set; }
     }

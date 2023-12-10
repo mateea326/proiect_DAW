@@ -1,0 +1,83 @@
+﻿@model DevCollab.Models.Subject
+
+<div class="d-flex justify-content-center">
+    <a class="btn btn-outline-success" href="/Subjects/Index/">Afisare subiecte</a>
+
+    <a class="btn btn-outline-success" href="/Subjects/New">Adauga subiecte</a>
+</div>
+<br />
+
+<div class="card">
+    @Html.Partial("SubjectInfo", Model)
+
+    <div class="d-flex flex-row justify-content-between">
+        <a class="btn btn-success" href="/Subjects/Edit/@Model.Id">Editeaza subiect</a>
+
+        <form method="post" action="/Subjects/Delete/@Model.Id">
+            <button class="btn btn-danger" type="submit">Sterge subiect</button>
+        </form>
+    </div>
+</div>
+<br />
+<br />
+
+@foreach (var answer in Model.Answers)
+{
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2"></div>
+
+            <div class="col-md-8">
+                <div>
+                    <p>@answer.Content</p>
+
+                    <small>@answer.Date</small>
+                </div>
+                <br>
+
+                <div class="d-flex">
+                    <div>
+                        <a class="btn btn-outline-primary" href="/Answers/Edit/@answer.Id"><i class="bi bi-pencil-square"></i>Editeaza</a>
+                    </div>
+
+                    <div>
+                        <form method="post" action="/Answers/Delete/@answer.Id">
+                            <button class="btn btn-outline-danger" type="submit"><i class="bi bi-trash"></i>Sterge</button>
+                        </form>
+                    </div>
+                </div>
+                <br />
+            </div>
+
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-2"></div>
+
+        <div class="col-md-8">
+            <div class="card">
+                <form method="post" action="/Subjects/Show/@Model.Id">
+                    <div class="card-body">
+                        <input type="hidden" name="SubjectId" value="@Model.Id" />
+
+                        <label>Continut raspuns</label>
+                        <br />
+
+                        <textarea class="form-control" name="Content"></textarea>
+
+                        @Html.ValidationMessage("Content", null, new { @class = "text-danger"})
+                        <br /><br />
+
+                        <button class="btn btn-success " type="submit">Adauga raspuns</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="col-md-2"></div>
+    </div>
+</div>
