@@ -1,10 +1,9 @@
 ﻿@model DevCollab.Models.Category
 @{
-    ViewBag.Title = "Afisare categorie";
+    ViewBag.Title = "Afișare categorie";
 }
 
-
-<h2>@ViewBag.Title</h2>
+<h2 id="h-categ">@ViewBag.Title</h2>
 
 <br />
 
@@ -13,11 +12,11 @@
 
 <form method="post" action="/Categories/Delete/@Model.Id">
 
-    <button class="btn btn-danger" type="submit">Sterge categoria</button>
+    <button id="buton3" class="btn btn-danger" type="submit">Șterge categoria</button>
 
 </form>
 <br />
-<a class="btn alert-success" href="/Categories/Index/">Afisare lista categorii</a>
+<a id="buton" class="btn alert-secondary" href="/Categories/Index/">Afișare listă categorii</a>
 
 <br />
 <hr />

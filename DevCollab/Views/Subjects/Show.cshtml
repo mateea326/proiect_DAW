@@ -1,0 +1,79 @@
+﻿@model DevCollab.Models.Subject
+
+<div class="d-flex justify-content-center">
+    <a id="buton" class="btn btn-outline-secondary" href="/Subjects/Index/">Afișare subiecte</a>
+
+    <a id="buton" class="btn btn-outline-secondary" href="/Subjects/New">Adaugă subiect</a>
+</div>
+<br />
+
+<div class="card border-0">
+    @Html.Partial("SubjectInfo", Model)
+    <div id="butoane-sub">
+        <a id="buton2" class="btn btn-secondary" href="/Subjects/Edit/@Model.Id">Editează subiect</a>
+
+        <form method="post" action="/Subjects/Delete/@Model.Id">
+            <button id="buton3" class="btn btn-danger" type="submit">Șterge subiect</button>
+        </form>
+    </div>
+</div>
+
+@foreach (var answer in Model.Answers)
+{
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2"></div>
+
+            <div id="container-ans" class="col-md-8">
+                <div>
+                    <p>@answer.Content</p>
+
+                    <small id="date">@answer.Date</small>
+                </div>
+                <br>
+
+                <div class="d-flex">
+                    <div>
+                        <a id="buton2" class="btn btn-outline-secondary" href="/Answers/Edit/@answer.Id"><i class="bi bi-pencil-square"></i>Editează</a>
+                    </div>
+
+                    <div>
+                        <form method="post" action="/Answers/Delete/@answer.Id">
+                            <button id="buton3" class="btn btn-outline-danger" type="submit"><i class="bi bi-trash"></i>Șterge</button>
+                        </form>
+                    </div>
+                </div>
+                <br />
+            </div>
+
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+}
+
+<div id="add-ans" class="container">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <div class="card">
+                <form method="post" action="/Subjects/Show/@Model.Id">
+                    <div class="card-body">
+                        <input type="hidden" name="SubjectId" value="@Model.Id" />
+
+                        <label>Răspuns</label>
+                        <br />
+
+                        <textarea class="form-control" name="Content"></textarea>
+
+                        @Html.ValidationMessage("Content", null, new { @class = "text-danger"})
+                        <br />
+
+                        <button id = "buton2" class="btn btn-secondary" type="submit">Adaugă răspuns</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="col-md-2"></div>
+    </div>
+</div>

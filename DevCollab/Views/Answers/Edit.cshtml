@@ -1,11 +1,10 @@
-﻿@model DevCollab.Models.Comment
-
+﻿@model DevCollab.Models.Answer
 
 @{
     ViewBag.Title = "Edit";
 }
 
-<h2>Editare raspuns</h2>
+<h2 id="h-subjects">Editare răspuns</h2>
 <br />
 
 
@@ -13,7 +12,7 @@
       method: FormMethod.Post, routeValues: new { id = Model.Id }))
 
 {
-    @Html.Label("Content", "Continut raspuns")
+    @Html.Label("Content", "Conținut raspuns")
 
     <br />
 
@@ -25,7 +24,7 @@
     <br />
     <br />
 
-    <button class="btn  btn-primary" type="submit">Editeaza raspunsul</button>
+    <button id="buton2" class="btn btn-secondary" type="submit">Editeaza răspunsul</button>
 
 }
 

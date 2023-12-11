@@ -52,7 +52,7 @@ namespace DevCollab.Controllers
             {
                 db.Categories.Add(cat);
                 db.SaveChanges();
-                TempData["message"] = "Categoria a fost adaugata!";
+                TempData["message"] = "Categoria a fost adaugată";
                 return RedirectToAction("Index");
             }
 
@@ -78,7 +78,7 @@ namespace DevCollab.Controllers
 
                 category.CategoryName = requestCategory.CategoryName;
                 db.SaveChanges();
-                TempData["message"] = "Categoria a fost modificata!";
+                TempData["message"] = "Categoria a fost modificată";
                 return RedirectToAction("Index");
             }
             else
@@ -92,7 +92,7 @@ namespace DevCollab.Controllers
         {
             Category category = db.Categories.Find(id);
             db.Categories.Remove(category);
-            TempData["message"] = "Categoria a fost stearsa!";
+            TempData["message"] = "Categoria a fost ștearsă";
             db.SaveChanges();
             return RedirectToAction("Index");
         }

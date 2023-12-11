@@ -5,14 +5,14 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DevCollab.Controllers
 {
-    public class CommentsController : Controller
+    public class AnswersController : Controller
     {
         private readonly ApplicationDbContext db;
 
         private readonly UserManager<ApplicationUser> _userManager;
 
         private readonly RoleManager<IdentityRole> _roleManager;
-        public CommentsController(ApplicationDbContext context, UserManager<ApplicationUser> userManager,
+        public AnswersController(ApplicationDbContext context, UserManager<ApplicationUser> userManager,
             RoleManager<IdentityRole> roleManager)
         {
             db = context;
@@ -21,39 +21,38 @@ namespace DevCollab.Controllers
         }
 
 
-        // stergerea unui raspuns asociat unei intrebari din baza de date
+        
         [HttpPost]
         public IActionResult Delete(int id)
         {
-            Answer ans = db.Answers.Find(id);
-            db.Answers.Remove(ans);
+            Answer answer = db.Answers.Find(id);
+            db.Answers.Remove(answer);
             db.SaveChanges();
-            return Redirect("/Subjects/Show/" + ans.SubjectId);
+            return Redirect("/Subjects/Show/" + answer.SubjectId);
         }
 
-        // implementarea editarii intr-o pagina View separata
-        // se editeaza un raspuns existent
+        
 
         public IActionResult Edit(int id)
         {
-            Answer ans = db.Answer.Find(id);
+            Answer answer = db.Answers.Find(id);
 
-            return View(ans);
+            return View(answer);
         }
 
         [HttpPost]
         public IActionResult Edit(int id, Answer requestAnswer)
         {
-            Answer ans = db.Answers.Find(id);
+            Answer answer = db.Answers.Find(id);
 
             if (ModelState.IsValid)
             {
 
-                ans.Content = requestAnswer.Content;
+                answer.Content = requestAnswer.Content;
 
                 db.SaveChanges();
 
-                return Redirect("/Articles/Show/" + ans.SubjectId);
+                return Redirect("/Subjects/Show/" + answer.SubjectId);
             }
             else
             {
