@@ -4,19 +4,46 @@
     
     <h2 id="h-subjects" >Subiecte</h2>
     <br />
-<!--
+
 <div id="butoane">
     <a class="btn btn-outline-secondary" id="buton" href="/Categories/Index/">Afișare categorii</a> 
     <a class="btn btn-outline-secondary" id="buton" href="/Subjects/New">Adaugă subiect</a>
 
 </div>
--->
 
+<br /><br />
+@* Afisarea paginata a intrebarilor *@
+<div>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            <li class="page-item">
+                <a class="page-link"
+                   href="/Subjects/Index?page=1" aria-label="Previous" id="prev-page">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            @for (int i = 1; i <= ViewBag.lastPage; i++)
+            {
+                <li class="page-item">
+                    <a class="page-link" id="page-nr"
+                       href="/Subjects/Index?page=@i">@(i)</a>
+                </li>
+            }
+
+            <li class="page-item">
+                <a class="page-link"
+                   href="/Subjects/Index?page=@(ViewBag.lastPage)" arialabel="Next" id="next-page">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
 <br /><br />
 
 @if (ViewBag.Message != null)
 {
-    <div class="@ViewBag.Alert p-3 rounded-3 text-center mb-5">@ViewBag.Message</div>
+    <div id="succes-msg" class="p-3 rounded-3 text-center mb-5">@ViewBag.Message</div>
 }
 
 @foreach (DevCollab.Models.Subject subject in ViewBag.Subjects)

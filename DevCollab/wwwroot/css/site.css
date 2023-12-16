@@ -275,3 +275,25 @@ a {
 #add-ans {
     margin-left:1.2%;
 }
+
+.note-editor .dropdown-toggle::after {
+    display: none;
+}
+
+#next-page {
+    color: #cc8daa;
+    background-color: #f2d8e6;
+    border: 0.05rem solid #222426;
+}
+
+#prev-page {
+    color: #cc8daa;
+    background-color: #f2d8e6;
+    border: 0.05rem solid #222426;
+}
+
+#page-nr {
+    color: #cc8daa;
+    background-color: #f2d8e6;
+    border: 0.05rem solid #222426;
+}

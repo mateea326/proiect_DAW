@@ -24,14 +24,13 @@ namespace DevCollab.Models
 
 
         [Required(ErrorMessage = "Categoria este obligatorie")]
-        public int CategoryId { get; set; }
+        public int? CategoryId { get; set; }
 
         public string? UserId { get; set; }
         public virtual ApplicationUser? User { get; set; }
 
         public virtual Category? Category { get; set; }
         public virtual ICollection<Answer>? Answers { get; set; }
-
 
         [NotMapped]
         public IEnumerable<SelectListItem>? Categ { get; set; }

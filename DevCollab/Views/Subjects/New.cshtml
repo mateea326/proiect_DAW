@@ -9,7 +9,7 @@
             {
                @Html.ValidationSummary(false, "", new { @class = "text-danger" })
 
-                @Html.Label("Title", "Titlu subiect")
+                @Html.Label("Title", "Titlul subiectului")
                 <br />
 
                 @Html.TextBox("Title", null, new { @class = "form-control" })
@@ -18,10 +18,11 @@
                 <br />
                 <br />
 
-                @Html.Label("Content", "Conținut subiect")
+                @Html.Label("Content", "Conținut întrebare")
                 <br />
 
-                @Html.TextArea("Content", null, new { @class = "form-control" })
+                @Html.TextArea("Content", null, new { @class = "summernote" })
+                //@Html.TextArea("Content", null, new { @class = "form-control" })
 
                 @Html.ValidationMessage("Content", null, new { @class = "text-danger" })
                 <br />
@@ -36,12 +37,11 @@
                 <br />
                 <br />
 
-                <button id="buton" class="btn btn-secondary" type="submit">Adaugă subiect</button>
+                <button id="buton" class="btn btn-secondary" type="submit">Adaugă întrebare</button>
             }
         </div>
     </div>
 </div>
-
 
 
 

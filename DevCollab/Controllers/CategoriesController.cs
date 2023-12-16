@@ -59,7 +59,7 @@ namespace DevCollab.Controllers
             {
                 db.Categories.Add(cat);
                 db.SaveChanges();
-                TempData["message"] = "Categoria a fost adaugată";
+                TempData["message"] = "Categoria a fost adăugată";
                 return RedirectToAction("Index");
             }
 
