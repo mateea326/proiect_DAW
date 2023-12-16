@@ -2,9 +2,13 @@
 using DevCollab.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
+using System.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace DevCollab.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class CategoriesController : Controller
     {
         private readonly ApplicationDbContext db;
@@ -12,13 +16,16 @@ namespace DevCollab.Controllers
         private readonly UserManager<ApplicationUser> _userManager;
 
         private readonly RoleManager<IdentityRole> _roleManager;
-        
-        public CategoriesController(ApplicationDbContext context, UserManager<ApplicationUser> userManager,
-            RoleManager<IdentityRole> roleManager)
+        public CategoriesController(ApplicationDbContext context,
+                                    UserManager<ApplicationUser> userManager,
+                                    RoleManager<IdentityRole> roleManager)
         {
             db = context;
+
             _userManager = userManager;
+
             _roleManager = roleManager;
+
         }
         public ActionResult Index()
         {
@@ -90,7 +97,10 @@ namespace DevCollab.Controllers
         [HttpPost]
         public ActionResult Delete(int id)
         {
-            Category category = db.Categories.Find(id);
+            Category category = db.Categories.Include("Subjects")
+                                             .Include("Subjects.Answers")
+                                             .Where(cat => cat.Id == id)
+                                             .First();
             db.Categories.Remove(category);
             TempData["message"] = "Categoria a fost ștearsă";
             db.SaveChanges();

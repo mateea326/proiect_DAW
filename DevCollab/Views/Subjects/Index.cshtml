@@ -4,19 +4,20 @@
     
     <h2 id="h-subjects" >Subiecte</h2>
     <br />
+<!--
 <div id="butoane">
     <a class="btn btn-outline-secondary" id="buton" href="/Categories/Index/">Afișare categorii</a> 
     <a class="btn btn-outline-secondary" id="buton" href="/Subjects/New">Adaugă subiect</a>
 
 </div>
+-->
 
 <br /><br />
 
 @if (ViewBag.Message != null)
 {
-    <h2 id="succes-msg" class="alert-success p-3 rounded-3 text-center mb-5">@ViewBag.Message</h2>
+    <div class="@ViewBag.Alert p-3 rounded-3 text-center mb-5">@ViewBag.Message</div>
 }
-
 
 @foreach (DevCollab.Models.Subject subject in ViewBag.Subjects)
 {

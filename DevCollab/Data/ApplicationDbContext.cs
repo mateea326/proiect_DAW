@@ -1,6 +1,7 @@
 ﻿using DevCollab.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DevCollab.Data
 {
@@ -10,7 +11,7 @@ namespace DevCollab.Data
             : base(options)
         {
         }
-
+        
         public DbSet<Subject> Subjects { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Answer> Answers { get; set; }

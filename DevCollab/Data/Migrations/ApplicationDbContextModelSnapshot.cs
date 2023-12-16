@@ -17,7 +17,7 @@ namespace DevCollab.Data.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.14")
+                .HasAnnotation("ProductVersion", "6.0.23")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
@@ -30,9 +30,6 @@ namespace DevCollab.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<string>("ApplicationUserId")
-                        .HasColumnType("nvarchar(450)");
-
                     b.Property<string>("Content")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -43,11 +40,14 @@ namespace DevCollab.Data.Migrations
                     b.Property<int?>("SubjectId")
                         .HasColumnType("int");
 
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("ApplicationUserId");
-
                     b.HasIndex("SubjectId");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Answers");
                 });
@@ -142,9 +142,6 @@ namespace DevCollab.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<string>("ApplicationUserId")
-                        .HasColumnType("nvarchar(450)");
-
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
@@ -160,11 +157,14 @@ namespace DevCollab.Data.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("ApplicationUserId");
-
                     b.HasIndex("CategoryId");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Subjects");
                 });
@@ -308,30 +308,34 @@ namespace DevCollab.Data.Migrations
 
             modelBuilder.Entity("DevCollab.Models.Answer", b =>
                 {
-                    b.HasOne("DevCollab.Models.ApplicationUser", null)
-                        .WithMany("Answers")
-                        .HasForeignKey("ApplicationUserId");
-
                     b.HasOne("DevCollab.Models.Subject", "Subject")
                         .WithMany("Answers")
                         .HasForeignKey("SubjectId");
 
+                    b.HasOne("DevCollab.Models.ApplicationUser", "User")
+                        .WithMany("Answers")
+                        .HasForeignKey("UserId");
+
                     b.Navigation("Subject");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("DevCollab.Models.Subject", b =>
                 {
-                    b.HasOne("DevCollab.Models.ApplicationUser", null)
-                        .WithMany("Subjects")
-                        .HasForeignKey("ApplicationUserId");
-
                     b.HasOne("DevCollab.Models.Category", "Category")
                         .WithMany("Subjects")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("DevCollab.Models.ApplicationUser", "User")
+                        .WithMany("Subjects")
+                        .HasForeignKey("UserId");
+
                     b.Navigation("Category");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
