@@ -7,24 +7,29 @@
 <h2 id="h-subjects">Editare răspuns</h2>
 <br />
 
-
-@using (Html.BeginForm(controllerName: "Answers", actionName: "Edit",
-      method: FormMethod.Post, routeValues: new { id = Model.Id }))
-
+@if (Model != null)
 {
-    @Html.Label("Content", "Conținut raspuns")
+    @using (Html.BeginForm(controllerName: "Answers", actionName: "Edit",
+                        method: FormMethod.Post, routeValues: new { id = Model.Id }))
 
-    <br />
+    {
+        @Html.Label("Content", "Conținut raspuns")
 
-    @Html.Editor("Content", new { @class = "form-control" })
-    <br />
+        <br />
 
-    @Html.ValidationMessage("Content", null, new { @class = "text-danger" })
+        @Html.Editor("Content", new { @class = "form-control" })
+        <br />
 
-    <br />
-    <br />
+        @Html.ValidationMessage("Content", null, new { @class = "text-danger" })
 
-    <button id="buton2" class="btn btn-secondary" type="submit">Editeaza răspunsul</button>
+        <br />
+        <br />
 
+        <button id="buton2" class="btn btn-secondary" type="submit">Editeaza răspunsul</button>
+
+    }
 }
-
+else
+{
+    <p>The model is null</p>
+}

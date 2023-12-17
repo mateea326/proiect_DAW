@@ -574,3 +574,7 @@ C:\Users\User\Desktop\DevCollab\DevCollab\bin\Debug\net6.0\AngleSharp.dll
 C:\Users\User\Desktop\DevCollab\DevCollab\bin\Debug\net6.0\AngleSharp.Css.dll
 C:\Users\User\Desktop\DevCollab\DevCollab\bin\Debug\net6.0\HtmlSanitizer.dll
 C:\Users\User\Desktop\DevCollab\DevCollab\bin\Debug\net6.0\System.Collections.Immutable.dll
+C:\Users\andre\OneDrive\Desktop\proiect_DAW\DevCollab\bin\Debug\net6.0\AngleSharp.dll
+C:\Users\andre\OneDrive\Desktop\proiect_DAW\DevCollab\bin\Debug\net6.0\AngleSharp.Css.dll
+C:\Users\andre\OneDrive\Desktop\proiect_DAW\DevCollab\bin\Debug\net6.0\HtmlSanitizer.dll
+C:\Users\andre\OneDrive\Desktop\proiect_DAW\DevCollab\bin\Debug\net6.0\System.Collections.Immutable.dll

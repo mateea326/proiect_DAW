@@ -54,7 +54,7 @@ namespace DevCollab.Controllers
         {
             Answer answer = db.Answers.Find(id);
 
-            if (answer.UserId == _userManager.GetUserId(User)
+            if (answer != null && (answer.UserId == _userManager.GetUserId(User))
               || User.IsInRole("Admin"))
             {
                 return View(answer);

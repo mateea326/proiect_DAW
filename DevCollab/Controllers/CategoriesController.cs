@@ -12,20 +12,9 @@ namespace DevCollab.Controllers
     public class CategoriesController : Controller
     {
         private readonly ApplicationDbContext db;
-
-        private readonly UserManager<ApplicationUser> _userManager;
-
-        private readonly RoleManager<IdentityRole> _roleManager;
-        public CategoriesController(ApplicationDbContext context,
-                                    UserManager<ApplicationUser> userManager,
-                                    RoleManager<IdentityRole> roleManager)
+        public CategoriesController(ApplicationDbContext context)
         {
             db = context;
-
-            _userManager = userManager;
-
-            _roleManager = roleManager;
-
         }
         public ActionResult Index()
         {

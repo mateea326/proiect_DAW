@@ -86,7 +86,13 @@ namespace DevCollab.Controllers
                                          .Include("Answers")
                                          .Include("Answers.User")
                               .Where(sub => sub.Id == id)
-                              .First();
+                              .FirstOrDefault();
+
+            if (subject == null)
+            {
+                return NotFound(); // or handle the absence of the element in another way
+            }
+
             SetAccessRights();
 
             return View(subject);
@@ -165,7 +171,12 @@ namespace DevCollab.Controllers
         {
             Subject subject = db.Subjects.Include("Category")
                                          .Where(sub => sub.Id == id)
-                                         .First();
+                                         .FirstOrDefault();
+
+            if (subject == null)
+            {
+                return NotFound();
+            }
 
             subject.Categ = GetAllCategories();
 
