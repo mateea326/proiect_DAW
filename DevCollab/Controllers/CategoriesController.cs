@@ -8,14 +8,25 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DevCollab.Controllers
 {
-    [Authorize(Roles = "Admin")]
     public class CategoriesController : Controller
     {
         private readonly ApplicationDbContext db;
-        public CategoriesController(ApplicationDbContext context)
+
+        private readonly UserManager<ApplicationUser> _userManager;
+
+        private readonly RoleManager<IdentityRole> _roleManager;
+        public CategoriesController(ApplicationDbContext context,
+                                    UserManager<ApplicationUser> userManager,
+                                    RoleManager<IdentityRole> roleManager)
         {
             db = context;
+
+            _userManager = userManager;
+
+            _roleManager = roleManager;
+
         }
+
         public ActionResult Index()
         {
             if (TempData.ContainsKey("message"))
@@ -27,21 +38,25 @@ namespace DevCollab.Controllers
                              orderby category.CategoryName
                              select category;
             ViewBag.Categories = categories;
+            SetAccessRights();
             return View();
         }
 
         public ActionResult Show(int id)
         {
             Category category = db.Categories.Find(id);
+            SetAccessRights();
             return View(category);
         }
 
+        [Authorize(Roles = "Admin")]
         public ActionResult New()
         {
             return View();
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public ActionResult New(Category cat)
         {
             if (ModelState.IsValid)
@@ -58,6 +73,7 @@ namespace DevCollab.Controllers
             }
         }
 
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int id)
         {
             Category category = db.Categories.Find(id);
@@ -65,6 +81,7 @@ namespace DevCollab.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int id, Category requestCategory)
         {
             Category category = db.Categories.Find(id);
@@ -84,6 +101,7 @@ namespace DevCollab.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int id)
         {
             Category category = db.Categories.Include("Subjects")
@@ -94,6 +112,18 @@ namespace DevCollab.Controllers
             TempData["message"] = "Categoria a fost ștearsă";
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        private void SetAccessRights()
+        {
+            ViewBag.AfisareButoane = false;
+
+            if (User.IsInRole("Admin"))
+            {
+                ViewBag.AfisareButoane = true;
+            }
+
+            ViewBag.UserCurent = _userManager.GetUserId(User);
         }
     }
 }

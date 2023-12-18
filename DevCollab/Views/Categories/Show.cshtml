@@ -1,22 +1,16 @@
 ﻿model DevCollab.Models.Category
+
 @{
-    ViewBag.Title = "Afișare categorie";
+    ViewBag.Title = "Categoria";
 }
 
-<h2 id="h-categ">@ViewBag.Title</h2>
+<h2 id="h-categ">@ViewBag.Title @Model.CategoryName</h2>
 
 <br />
 
-<p>@Model.CategoryName</p>
-
-
-<form method="post" action="/Categories/Delete/@Model.Id">
-
-    <button id="buton3" class="btn btn-danger" type="submit">Șterge categoria</button>
-
-</form>
 <br />
 <a id="buton" class="btn alert-secondary" href="/Categories/Index/">Afișare listă categorii</a>
+
 
 <br />
 <hr />

@@ -34,7 +34,7 @@ namespace DevCollab.Controllers
 
         }
 
-        [Authorize(Roles = "User,Editor,Admin")]
+       // [Authorize(Roles = "User,Editor,Admin")]
         public IActionResult Index()
         {
             // Alegem sa afisam 3 intrebari pe pagina
@@ -77,8 +77,6 @@ namespace DevCollab.Controllers
 
             return View();*/
         }
-
-        [Authorize(Roles = "User,Editor,Admin")]
         public IActionResult Show(int id)
         {
             Subject subject = db.Subjects.Include("Category")
@@ -100,7 +98,6 @@ namespace DevCollab.Controllers
 
 
         [HttpPost]
-        [Authorize(Roles = "User,Editor,Admin")]
         public IActionResult Show([FromForm] Answer answer)
         {
             answer.Date = DateTime.Now;
@@ -128,7 +125,7 @@ namespace DevCollab.Controllers
             }
         }
 
-        [Authorize(Roles = "User,Editor,Admin")]
+        [Authorize(Roles = "User,Admin")]
         public IActionResult New()
         {
             Subject subject = new Subject();
@@ -138,7 +135,7 @@ namespace DevCollab.Controllers
             return View(subject);
         }
 
-        [Authorize(Roles = "User,Editor,Admin")]
+        [Authorize(Roles = "User,Admin")]
         [HttpPost]
         public IActionResult New(Subject subject)
         {
@@ -166,7 +163,7 @@ namespace DevCollab.Controllers
             }
         }
 
-        [Authorize(Roles = "User,Editor,Admin")]
+        [Authorize(Roles = "User,Admin")]
         public IActionResult Edit(int id)
         {
             Subject subject = db.Subjects.Include("Category")
@@ -194,7 +191,7 @@ namespace DevCollab.Controllers
         }
         
         [HttpPost]
-        [Authorize(Roles = "User,Editor,Admin")]
+        [Authorize(Roles = "User,Admin")]
         public IActionResult Edit(int id, Subject requestSubject)
         {
             var sanitizer = new HtmlSanitizer();
@@ -233,7 +230,7 @@ namespace DevCollab.Controllers
 
 
         [HttpPost]
-        [Authorize(Roles = "User,Editor,Admin")]
+        [Authorize(Roles = "User,Admin")]
         public ActionResult Delete(int id)
         {
             Subject subject = db.Subjects.Include("Answers")

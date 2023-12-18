@@ -28,13 +28,12 @@ namespace DevCollab.Controllers
 
 
         [HttpPost]
-        [Authorize(Roles = "User,Editor,Admin")]
+        [Authorize(Roles = "User,Admin")]
         public IActionResult Delete(int id)
         {
             Answer answer = db.Answers.Find(id);
 
-            if (answer.UserId == _userManager.GetUserId(User)
-              || User.IsInRole("Admin"))
+            if (answer.UserId == _userManager.GetUserId(User)|| User.IsInRole("Admin"))
             {
                 db.Answers.Remove(answer);
                 db.SaveChanges();
@@ -44,18 +43,17 @@ namespace DevCollab.Controllers
             {
                 TempData["message"] = "Nu aveti dreptul sa stergeti comentariul";
                 TempData["messageType"] = "alert-danger";
-                return RedirectToAction("Index", "Subjects");
+                return RedirectToAction("Show", "Categories");
             }
         }
 
 
-        [Authorize(Roles = "User,Editor,Admin")]
+        [Authorize(Roles = "User,Admin")]
         public IActionResult Edit(int id)
         {
             Answer answer = db.Answers.Find(id);
 
-            if (answer != null && (answer.UserId == _userManager.GetUserId(User))
-              || User.IsInRole("Admin"))
+            if (answer != null && (answer.UserId == _userManager.GetUserId(User)) || User.IsInRole("Admin"))
             {
                 return View(answer);
             }
@@ -63,19 +61,18 @@ namespace DevCollab.Controllers
             {
                 TempData["message"] = "Nu aveti dreptul sa editati comentariul";
                 TempData["messageType"] = "alert-danger";
-                return RedirectToAction("Index", "Subjects");
+                return RedirectToAction("Show", "Categories");
             }
                 
         }
 
         [HttpPost]
-        [Authorize(Roles = "User,Editor,Admin")]
+        [Authorize(Roles = "User,Admin")]
         public IActionResult Edit(int id, Answer requestAnswer)
         {
             Answer answer = db.Answers.Find(id);
 
-            if (answer.UserId == _userManager.GetUserId(User)
-              || User.IsInRole("Admin"))
+            if (answer.UserId == _userManager.GetUserId(User) || User.IsInRole("Admin"))
             {
                 if (ModelState.IsValid)
                 {
@@ -95,7 +92,7 @@ namespace DevCollab.Controllers
             {
                 TempData["message"] = "Nu aveti dreptul sa faceti modificari";
                 TempData["messageType"] = "alert-danger";
-                return RedirectToAction("Index", "Subjects");
+                return RedirectToAction("Show", "Categories");
             }
 
         }

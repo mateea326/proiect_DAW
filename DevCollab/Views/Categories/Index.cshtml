@@ -1,13 +1,11 @@
 ﻿@{
     ViewBag.Title = "Categorii";
 }
-<div id="categ">
 <h2 id="h-categ">@ViewBag.Title</h2>
 
-<a href="/Subjects/Index" id="a-categ">Înapoi la subiecte</a>
+<!--</><a href="/Subjects/Index" id="a-categ">Înapoi la subiecte</a>-->
 <br />
 
-</div>
 
 @if (TempData.ContainsKey("message"))
 {
@@ -21,11 +19,26 @@
     @Html.Label("CategoryName", "Denumire categorie")
     <p>@category.CategoryName</p>
     <a id="buton" class="btn alert-secondary" href="/Categories/Show/@category.Id">Afișare categorie</a>
-    <a id="buton" class="btn alert-secondary" href="/Categories/Edit/@category.Id">Editare categorie</a>
+
+    @if (ViewBag.AfisareButoane == true)
+    {
+        <a id="buton" class="btn alert-secondary" href="/Categories/Edit/@category.Id">Editare categorie</a>
+
+        <br /><br />
+
+        <form method="post" action="/Categories/Delete/@category.Id">
+
+            <button id="buton3" class="btn btn-danger" type="submit">Șterge categoria</button>
+
+        </form>
+    }
+
     <br />
     <hr />
     <br />
 }
-<br />
-<a id="buton2" class="btn btn-secondary" href="/Categories/New">Adaugă o nouă categorie</a>
+@if (ViewBag.AfisareButoane == true)
+{
+    <a id="buton2" class="btn btn-secondary" href="/Categories/New">Adaugă o nouă categorie</a>
+}
 <br />
