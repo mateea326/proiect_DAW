@@ -43,7 +43,7 @@
 
 @if (ViewBag.Message != null)
 {
-    <div id="succes-msg" class="p-3 rounded-3 text-center mb-5">@ViewBag.Message</div>
+    <div id="succes-msg">@ViewBag.Message</div>
 }
 
 @foreach (DevCollab.Models.Subject subject in ViewBag.Subjects)

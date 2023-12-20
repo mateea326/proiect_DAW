@@ -30,12 +30,12 @@
                         @if (User.IsInRole("User"))
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Categories" asp-action="Index">Afisare categorii</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Categories" asp-action="Index">Afișare categorii</a>
                             </li>
 
                             
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Subjects" asp-action="New">Adauga subiect</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Subjects" asp-action="New">Adaugă subiect</a>
                             </li>
                             
                         }
@@ -49,26 +49,21 @@
 
 
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Categories" asp-action="New">Adauga categorie</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Categories" asp-action="New">Adaugă categorie</a>
                             </li>
 
                             
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Subjects" asp-action="New">Adauga subiect</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Subjects" asp-action="New">Adaugă subiect</a>
                             </li>
                         } 
 
                         else 
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Categories" asp-action="Index">Afisare categorii</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Categories" asp-action="Index">Afișare categorii</a>
                             </li>
                         }
-                        <!--
-                        <li class="nav-item">
-                            <a class="nav-link text-black" asp-area="" asp-controller="Home" asp-action="Index">Acasă</a>
-                        </li>
-                        -->
 
                     </ul>
                     <partial name="_LoginPartial" />

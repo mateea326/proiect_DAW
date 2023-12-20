@@ -25,8 +25,6 @@ namespace DevCollab.Controllers
 
         }
 
-
-
         [HttpPost]
         [Authorize(Roles = "User,Admin")]
         public IActionResult Delete(int id)

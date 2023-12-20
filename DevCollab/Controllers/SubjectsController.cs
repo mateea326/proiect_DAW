@@ -34,7 +34,6 @@ namespace DevCollab.Controllers
 
         }
 
-       // [Authorize(Roles = "User,Editor,Admin")]
         public IActionResult Index()
         {
           
@@ -70,7 +69,7 @@ namespace DevCollab.Controllers
 
             if (subject == null)
             {
-                return NotFound(); // or handle the absence of the element in another way
+                return NotFound(); 
             }
 
             SetAccessRights();
@@ -135,7 +134,7 @@ namespace DevCollab.Controllers
                 db.Subjects.Add(subject);
                 db.SaveChanges();
                 TempData["message"] = "Subiectul a fost adăugat";
-                return RedirectToAction("Index");
+                return Redirect("/Categories/Show/" + subject.CategoryId);
             }
 
             else
@@ -168,7 +167,7 @@ namespace DevCollab.Controllers
             {
                 TempData["message"] = "Nu aveti dreptul sa faceti modificari asupra unui subiect care nu va apartine";
                 TempData["messageType"] = "alert-danger";
-                return RedirectToAction("Index");
+                return Redirect("/Categories/Show/" + subject.CategoryId);
             }
         }
         
@@ -194,12 +193,12 @@ namespace DevCollab.Controllers
                     TempData["message"] = "Subiectul a fost modificat";
                     TempData["messageType"] = "alert-success";
                     db.SaveChanges();
-                    return RedirectToAction("Index");
+                    return Redirect("/Categories/Show/" + subject.CategoryId);
                 }
                 else
                 {
                     TempData["message"] = "Nu aveti dreptul sa faceti modificari asupra unui subiect care nu va apartine";
-                    return RedirectToAction("Index");
+                    return Redirect("/Categories/Show/" + subject.CategoryId);
                 }
             }
 
@@ -226,13 +225,13 @@ namespace DevCollab.Controllers
                 db.SaveChanges();
                 TempData["message"] = "Subiectul a fost șters";
                 TempData["messageType"] = "alert-success";
-                return RedirectToAction("Index");
+                return Redirect("/Categories/Show/" + subject.CategoryId);
             }
             else
             {
                 TempData["message"] = "Nu aveti dreptul sa stergeti un subiect care nu va apartine";
                 TempData["messageType"] = "alert-danger";
-                return RedirectToAction("Index");
+                return Redirect("/Categories/Show/" + subject.CategoryId);
             }   
         }
 

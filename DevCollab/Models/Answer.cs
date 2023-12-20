@@ -9,7 +9,7 @@ namespace DevCollab.Models
         [Key]
         public int Id { get; set; }
 
-        [Required(ErrorMessage = "Continutul raspunsului este obligatoriu!")]
+        [Required(ErrorMessage = "Conținutul răspunsului este obligatoriu")]
         public string Content { get; set; }
 
         public DateTime Date { get; set; }

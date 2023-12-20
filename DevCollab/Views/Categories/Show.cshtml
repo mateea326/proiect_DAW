@@ -17,7 +17,7 @@
         <ul class="pagination">
             <li class="page-item">
                 <a class="page-link"
-                   href="/Categories/Show?page=1" aria-label="Previous" id="prev-page">
+                   href="/Categories/Show/@Model.Id/?page=1" aria-label="Previous" id="prev-page">
                     <span aria-hidden="true">&laquo;</span>
                 </a>
             </li>
@@ -31,7 +31,7 @@
 
             <li class="page-item">
                 <a class="page-link"
-                   href="/Categories/Show?page=@(ViewBag.lastPage)" arialabel="Next" id="next-page">
+                   href="/Categories/Show/@Model.Id/?page=@(ViewBag.lastPage)" arialabel="Next" id="next-page">
                     <span aria-hidden="true">&raquo;</span>
                 </a>
             </li>
@@ -43,7 +43,7 @@
 
 @if (ViewBag.Message != null)
 {
-    <div id="succes-msg" class="p-3 rounded-3 text-center mb-5">@ViewBag.Message</div>
+    <h2 id="succes-msg">@ViewBag.Message</h2>
 }
 @foreach (DevCollab.Models.Subject subject in ViewBag.Subjects)
 {
@@ -59,8 +59,6 @@
         <br />
     }
 }
-
-
 
 <br />
 <hr />
