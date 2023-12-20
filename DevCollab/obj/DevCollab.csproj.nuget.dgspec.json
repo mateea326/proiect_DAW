@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Desktop\\DevCollab\\DevCollab\\DevCollab.csproj": {}
+    "C:\\Users\\andre\\OneDrive\\Desktop\\proiect_DAW\\DevCollab\\DevCollab.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Desktop\\DevCollab\\DevCollab\\DevCollab.csproj": {
+    "C:\\Users\\andre\\OneDrive\\Desktop\\proiect_DAW\\DevCollab\\DevCollab.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\DevCollab\\DevCollab\\DevCollab.csproj",
+        "projectUniqueName": "C:\\Users\\andre\\OneDrive\\Desktop\\proiect_DAW\\DevCollab\\DevCollab.csproj",
         "projectName": "DevCollab",
-        "projectPath": "C:\\Users\\User\\Desktop\\DevCollab\\DevCollab\\DevCollab.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\DevCollab\\DevCollab\\obj\\",
+        "projectPath": "C:\\Users\\andre\\OneDrive\\Desktop\\proiect_DAW\\DevCollab\\DevCollab.csproj",
+        "packagesPath": "C:\\Users\\andre\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\andre\\OneDrive\\Desktop\\proiect_DAW\\DevCollab\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\andre\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -94,7 +94,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }

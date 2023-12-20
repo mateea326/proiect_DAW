@@ -37,45 +37,27 @@ namespace DevCollab.Controllers
        // [Authorize(Roles = "User,Editor,Admin")]
         public IActionResult Index()
         {
-            // Alegem sa afisam 3 intrebari pe pagina
+          
             int _perPage = 3;
-            var subjects = db.Subjects.Include("Category").Include("User")
-
-           .Include("User").OrderBy(a => a.Date);
+            var subjects = db.Subjects.Include("Category")
+                                      .Include("User")
+                                      .Include("User")
+                                      .OrderBy(a => a.Date);
             if (TempData.ContainsKey("message"))
             {
                 ViewBag.message = TempData["message"].ToString();
             }
-            // Fiind un numar variabil de intrebari, verificam de fiecare data utilizand metoda Count()
             int totalItems = subjects.Count();
-            // Se preia pagina curenta din View-ul asociat
-            // Numarul paginii este valoarea parametrului page din ruta
- // /Subjects/Index?page=valoare
             var currentPage =Convert.ToInt32(HttpContext.Request.Query["page"]);
             var offset = 0;
-            // Se calculeaza offsetul in functie de numarul paginii la care suntem
             if (!currentPage.Equals(0))
             {
                 offset = (currentPage - 1) * _perPage;
             }
             var paginatedSubjects = subjects.Skip(offset).Take(_perPage);
-            // Preluam numarul ultimei pagini
-
             ViewBag.lastPage = Math.Ceiling((float)totalItems /(float)_perPage);
             ViewBag.Subjects = paginatedSubjects;
             return View();
-
-
-            /*
-
-            ViewBag.Subjects = subjects;
-
-            if (TempData.ContainsKey("message"))
-            {
-                ViewBag.Message = TempData["message"];
-            }
-
-            return View();*/
         }
         public IActionResult Show(int id)
         {

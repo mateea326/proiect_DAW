@@ -41,10 +41,34 @@ namespace DevCollab.Controllers
             SetAccessRights();
             return View();
         }
-
-        public ActionResult Show(int id)
+        
+       
+        public IActionResult Show(int id, int? page = 1)
         {
-            Category category = db.Categories.Find(id);
+            Category? category = db.Categories.Find(id);
+            if (category == null)
+            {
+                return NotFound(); 
+            }
+            int _perPage = 3;
+            var subjects = db.Subjects.Include("Category")
+                                      .Include("User")
+                                      .Where(a => a.CategoryId == id)
+                                      .OrderBy(a => a.Date);
+            if (TempData.ContainsKey("message"))
+            {
+                ViewBag.message = TempData["message"].ToString();
+            }
+            int totalItems = subjects.Count();
+            var currentPage = Convert.ToInt32(HttpContext.Request.Query["page"]);
+            var offset = 0;
+            if (!currentPage.Equals(0))
+            {
+                offset = (currentPage - 1) * _perPage;
+            }
+            var paginatedSubjects = subjects.Skip(offset).Take(_perPage);
+            ViewBag.lastPage = Math.Ceiling((float)totalItems / (float)_perPage);
+            ViewBag.Subjects = paginatedSubjects;
             SetAccessRights();
             return View(category);
         }

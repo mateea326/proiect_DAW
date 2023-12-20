@@ -1,4 +1,4 @@
-﻿model DevCollab.Models.Category
+﻿@model DevCollab.Models.Category
 
 @{
     ViewBag.Title = "Categoria";
@@ -9,7 +9,57 @@
 <br />
 
 <br />
-<a id="buton" class="btn alert-secondary" href="/Categories/Index/">Afișare listă categorii</a>
+<a id="buton" class="btn alert-secondary" href="/Categories/Index/">Înapoi la categorii</a>
+<br />
+<br />
+<div>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            <li class="page-item">
+                <a class="page-link"
+                   href="/Categories/Show?page=1" aria-label="Previous" id="prev-page">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            @for (int i = 1; i <= ViewBag.lastPage; i++)
+            {
+                <li class="page-item">
+                    <a class="page-link" id="page-nr"
+                       href="/Categories/Show/@Model.Id/?page=@i">@(i)</a>
+                </li>
+            }
+
+            <li class="page-item">
+                <a class="page-link"
+                   href="/Categories/Show?page=@(ViewBag.lastPage)" arialabel="Next" id="next-page">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
+<br />
+<br />
+
+@if (ViewBag.Message != null)
+{
+    <div id="succes-msg" class="p-3 rounded-3 text-center mb-5">@ViewBag.Message</div>
+}
+@foreach (DevCollab.Models.Subject subject in ViewBag.Subjects)
+{
+    @if (subject.Category.Id == Model.Id)
+    {
+        <div class="card">
+
+            @Html.Partial("SubjectInfo", subject)
+
+            <a id="buton2" class="btn btn-secondary" href="/Subjects/Show/@subject.Id">Afișare subiect</a>
+        </div>
+        <br />
+        <br />
+    }
+}
+
 
 
 <br />
