@@ -7,17 +7,24 @@
 <h2 id="h-categ">@ViewBag.Title @Model.CategoryName</h2>
 
 <br />
+<a id="buton" class="btn btn-secondary" href="/Categories/Index/">Înapoi la categorii</a>
+<br /> <br />
+
+<form method="GET">
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Caută subiecte sau răspunsuri" name="search" value="@ViewBag.SearchString">
+        <button id="buton2" class="btn btn-outline-secondary" type="submit">Caută</button>
+    </div>
+</form>
 
 <br />
-<a id="buton" class="btn alert-secondary" href="/Categories/Index/">Înapoi la categorii</a>
-<br />
-<br />
+
 <div>
     <nav aria-label="Page navigation example">
         <ul class="pagination">
             <li class="page-item">
-                <a class="page-link"
-                   href="/Categories/Show/@Model.Id/?page=1" aria-label="Previous" id="prev-page">
+                <a class="page-link" id="page-nr"
+                   href="@ViewBag.PaginationBaseUrl=1" aria-label="Previous">
                     <span aria-hidden="true">&laquo;</span>
                 </a>
             </li>
@@ -25,19 +32,20 @@
             {
                 <li class="page-item">
                     <a class="page-link" id="page-nr"
-                       href="/Categories/Show/@Model.Id/?page=@i">@(i)</a>
+                       href="@ViewBag.PaginationBaseUrl=@i">@(i)</a>
                 </li>
             }
 
             <li class="page-item">
-                <a class="page-link"
-                   href="/Categories/Show/@Model.Id/?page=@(ViewBag.lastPage)" arialabel="Next" id="next-page">
+                <a class="page-link" id="page-nr"
+                   href="@ViewBag.PaginationBaseUrl=@(ViewBag.lastPage)" arialabel="Next">
                     <span aria-hidden="true">&raquo;</span>
                 </a>
             </li>
         </ul>
     </nav>
 </div>
+
 <br />
 <br />
 

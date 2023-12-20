@@ -55,6 +55,36 @@ namespace DevCollab.Controllers
                                       .Include("User")
                                       .Where(a => a.CategoryId == id)
                                       .OrderBy(a => a.Date);
+            var search = "";
+
+            if (Convert.ToString(HttpContext.Request.Query["search"]) !=null)
+            {
+                // eliminam spatiile libere
+                search = Convert.ToString(HttpContext.Request.Query["search"]).Trim();
+                List<int> subjectIds = db.Subjects.Where
+                         (
+                         sb => sb.Title.Contains(search)
+                         || sb.Content.Contains(search)
+                         ).Select(s => s.Id).ToList();
+                // Cautare in raspunsuri (Content)
+                List<int> subjectIdsOfAnswersWithSearchString = db.Answers.Where
+                    (
+                    a => a.Content.Contains(search)
+                    ).Select(a => (int)a.SubjectId).ToList();
+                // Se formeaza o singura lista formata din toate id-urile selectate anterior
+                List<int> mergedIds =subjectIds.Union(subjectIdsOfAnswersWithSearchString).ToList();
+                // Lista subiectelor care contin cuvantul cautat
+                // fie in subiect -> Title si Content
+                // fie in raspunsuri -> Content
+                subjects = db.Subjects.Where(subject =>
+                        mergedIds.Contains(subject.Id))
+                         .Include("Category")
+                         .Include("User")
+                         .OrderBy(a => a.Date);
+            }
+
+            ViewBag.SearchString = search;
+
             if (TempData.ContainsKey("message"))
             {
                 ViewBag.message = TempData["message"].ToString();
@@ -70,6 +100,16 @@ namespace DevCollab.Controllers
             ViewBag.lastPage = Math.Ceiling((float)totalItems / (float)_perPage);
             ViewBag.Subjects = paginatedSubjects;
             SetAccessRights();
+
+            if (search != "")
+            {
+                ViewBag.PaginationBaseUrl = "/Categories/Show/" + id + "/?search=" + search + "&page";
+            }
+            else
+            {
+                ViewBag.PaginationBaseUrl = "/Categories/Show/" + id + "/?page";
+            }
+
             return View(category);
         }
 

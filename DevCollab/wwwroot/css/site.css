@@ -279,20 +279,30 @@ a {
     display: none;
 }
 
-#next-page {
-    color: #cc8daa;
-    background-color: #f2d8e6;
-    border: 0.05rem solid #222426;
-}
-
-#prev-page {
-    color: #cc8daa;
-    background-color: #f2d8e6;
-    border: 0.05rem solid #222426;
-}
-
 #page-nr {
-    color: #cc8daa;
+    color: #cc8daa !important;
     background-color: #f2d8e6;
     border: 0.05rem solid #222426;
+}
+
+    #page-nr:hover {
+        color: #f0ece6 !important;
+    }
+
+textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus {
+    border-color: #f2d8e6;
+    box-shadow: 0rem 0 0 0.15rem #f2d8e6 inset;
+    outline: 0 none;
+}
+
+.pagination:focus, .page-item.focus, .page-link:focus {
+    border-color: #f2d8e6;
+    box-shadow: 0rem 0 0 0.15rem #f2d8e6 inset;
+    outline: 0 none;
+}
+
+.form-control:focus {
+    border-color: #f2d8e6;
+    box-shadow: 0rem 0 0 0.15rem #f2d8e6 inset;
+    outline: 0 none;
 }

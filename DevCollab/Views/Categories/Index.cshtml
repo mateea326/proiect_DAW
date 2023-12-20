@@ -18,11 +18,11 @@
 {
     @Html.Label("CategoryName", "Denumire categorie")
     <p>@category.CategoryName</p>
-    <a id="buton" class="btn alert-secondary" href="/Categories/Show/@category.Id">Afișare categorie</a>
+    <a id="buton" class="btn btn-secondary" href="/Categories/Show/@category.Id">Afișare categorie</a>
 
     @if (ViewBag.AfisareButoane == true)
     {
-        <a id="buton" class="btn alert-secondary" href="/Categories/Edit/@category.Id">Editare categorie</a>
+        <a id="buton" class="btn btn-secondary" href="/Categories/Edit/@category.Id">Editare categorie</a>
 
         <br /><br />
 
