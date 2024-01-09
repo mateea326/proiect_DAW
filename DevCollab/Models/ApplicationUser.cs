@@ -20,6 +20,7 @@ namespace DevCollab.Models
 
         // variabila in care vom retine rolurile existente in baza de date
         // pentru popularea unui dropdown list
+
         [NotMapped]
         public IEnumerable<SelectListItem>? AllRoles { get; set; }
 

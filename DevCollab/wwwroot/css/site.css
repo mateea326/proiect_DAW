@@ -1,5 +1,12 @@
-html {
+﻿html {
     font-size: 14px;
+}
+
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    box-shadow: 0 0 0px 1000px white inset; 
+    transition: background-color 5000s ease-in-out 0s; 
 }
 
 @media (min-width: 768px) {
@@ -186,7 +193,7 @@ svg {
     margin-top: 44%;
 }
 
-#h-subjects, #h-categ {
+#h-subjects, #h-categ, #h-cont {
     color: #222426 !important;
     font-family: Elephant;
     font-size: 40px;
@@ -230,7 +237,7 @@ a {
 }
 
     a:hover {
-        color: #fdf5f9 !important;
+        color: #f2d8e6 !important;
     }
 
 #card-sub {
@@ -305,4 +312,27 @@ textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus {
     border-color: #f2d8e6;
     box-shadow: 0rem 0 0 0.15rem #f2d8e6 inset;
     outline: 0 none;
+}
+
+.selectare-rol {
+    width:21%;
+}
+
+#inregistrare {
+    padding:5%;
+    margin:auto;
+    width:50%;
+}
+
+#lista-cont {
+    list-style: none;
+}
+
+#lista-cont::before {
+    content: '\2665'; 
+    color: #d698b5 !important; 
+}
+
+#link:hover {
+    color: #d698b5 !important;
 }

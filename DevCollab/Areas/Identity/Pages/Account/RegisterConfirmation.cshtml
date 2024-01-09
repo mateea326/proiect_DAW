@@ -1,0 +1,22 @@
+﻿@page
+@model RegisterConfirmationModel
+@{
+    ViewData["Title"] = "Confirmarea contului";
+}
+
+<h1 id="h-cont">@ViewData["Title"]</h1>
+@{
+    if (@Model.DisplayConfirmAccountLink)
+    {
+<p>
+            <a id="link" href="@Model.EmailConfirmationUrl">Apasă aici pentru a confirma contul</a>
+</p>
+    }
+    else
+    {
+<p>
+            Verifică-ți email-ul pentru a confirma contul.
+</p>
+    }
+}
+

@@ -10,11 +10,12 @@
 
             @if (ViewBag.Roles.Count > 0)
             {
-                <p><i class="bi bi-person"> </i> Roluri utilizator:</p>
+                <p><i class="bi bi-person"> </i> Rol utilizator:
                 @foreach (var role in ViewBag.Roles)
                 {
-                    <span class="rounded-pill bg-dark mr-2 px-4 py-2 text-white">@role</span>
+                    <span >@role</span>
                 }
+                </p>
             }
 
 

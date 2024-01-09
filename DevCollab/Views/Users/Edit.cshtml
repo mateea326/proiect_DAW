@@ -5,7 +5,7 @@
 {
 
     <i class="bi bi-person"></i>
-    @Html.Label("UserName", "Nume utilizator", new { @class = "" })
+    @Html.Label("Username", "Nume utilizator", new { @class = "" })
 
     <br />
 
@@ -14,7 +14,7 @@
     <br />
 
     <i class="bi bi-envelope"></i>
-    @Html.Label("Email", "Email utilizator", new { @class = "" })
+    @Html.Label("Email", "Email", new { @class = "" })
 
     <br />
 
@@ -23,7 +23,7 @@
     <br />
 
     <i class="bi bi-phone"></i>
-    @Html.Label("PhoneNumber", "Numar telefon")
+    @Html.Label("PhoneNumber", "Număr de telefon")
 
     <br />
 
@@ -32,7 +32,7 @@
     <br />
 
     <i class="bi bi-person"></i>
-    @Html.Label("FirstName", "Nume utilizator", new { @class = "" })
+    @Html.Label("FirstName", "Nume", new { @class = "" })
 
     <br />
 
@@ -41,7 +41,7 @@
     <br />
 
     <i class="bi bi-person"></i>
-    @Html.Label("LastName", "Prenume utilizator", new { @class = "" })
+    @Html.Label("LastName", "Prenume", new { @class = "" })
 
     <br />
 
@@ -50,8 +50,8 @@
     <br />
 
     <i class="bi bi-card-list"></i>
-    <label>Selectati rolul</label>
-    @Html.DropDownList("newRole", new SelectList(Model.AllRoles, "Value", "Text", ViewBag.UserRole), null, new { @class = "form-control" })
+    <label>Selectați rolul:</label>
+    @Html.DropDownList("newRole", new SelectList(Model.AllRoles, "Value", "Text", ViewBag.UserRole), null, new { @class = "form-control selectare-rol" })
 
     <br />
 
