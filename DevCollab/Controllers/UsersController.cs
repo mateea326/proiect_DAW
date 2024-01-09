@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using System.Data;
 
 namespace DevCollab.Controllers
 {
@@ -54,9 +55,13 @@ namespace DevCollab.Controllers
         public async Task<ActionResult> Edit(string id)
         {
             ApplicationUser user = db.Users.Find(id);
-
+            
+            if(user == null)
+            {
+                return NotFound();
+            }
             user.AllRoles = GetAllRoles();
-
+            
             var roleNames = await _userManager.GetRolesAsync(user); // Lista de nume de roluri
 
             // Cautam ID-ul rolului in baza de date
@@ -76,7 +81,7 @@ namespace DevCollab.Controllers
 
             user.AllRoles = GetAllRoles();
 
-
+           
             if (ModelState.IsValid)
             {
                 user.UserName = newData.UserName;

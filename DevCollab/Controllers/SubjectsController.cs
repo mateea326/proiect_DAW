@@ -240,8 +240,7 @@ namespace DevCollab.Controllers
         {
             ViewBag.AfisareButoane = false;
 
-            if (User.IsInRole("Editor")
-               || User.IsInRole("User"))
+            if (User.IsInRole("User"))
             {
                 ViewBag.AfisareButoane = true;
             }

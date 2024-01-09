@@ -63,30 +63,32 @@
         </div>
     </div>
 }
+@if (ViewBag.AfisareButoane == true || ViewBag.EsteAdmin)
+{
+    <div id="add-ans" class="container">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <div class="card">
+                    <form method="post" action="/Subjects/Show/@Model.Id">
+                        <div class="card-body">
+                            <input type="hidden" name="SubjectId" value="@Model.Id" />
 
-<div id="add-ans" class="container">
-    <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8">
-            <div class="card">
-                <form method="post" action="/Subjects/Show/@Model.Id">
-                    <div class="card-body">
-                        <input type="hidden" name="SubjectId" value="@Model.Id" />
+                            <label>Răspuns</label>
+                            <br />
 
-                        <label>Răspuns</label>
-                        <br />
+                            <textarea class="form-control" name="Content"></textarea>
 
-                        <textarea class="form-control" name="Content"></textarea>
+                            @Html.ValidationMessage("Content", null, new { @class = "text-danger"})
+                            <br />
 
-                        @Html.ValidationMessage("Content", null, new { @class = "text-danger"})
-                        <br />
-
-                        <button id = "buton2" class="btn btn-secondary" type="submit">Adaugă răspuns</button>
-                    </div>
-                </form>
+                            <button id = "buton2" class="btn btn-secondary" type="submit">Adaugă răspuns</button>
+                        </div>
+                    </form>
+                </div>
             </div>
-        </div>
 
-        <div class="col-md-2"></div>
+            <div class="col-md-2"></div>
+        </div>
     </div>
-</div>
+}
