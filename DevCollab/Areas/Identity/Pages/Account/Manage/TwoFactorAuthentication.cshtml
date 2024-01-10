@@ -17,33 +17,36 @@
             if (Model.RecoveryCodesLeft == 0)
             {
                 <div class="alert alert-danger">
-                    <strong>You have no recovery codes left.</strong>
-                    <p>You must <a asp-page="./GenerateRecoveryCodes">generate a new set of recovery codes</a> before you can log in with a recovery code.</p>
+                    <strong>Nu mai ai coduri de recuperare disponibile.</strong>
+
+                    <p>Trebuie să 
+                    <a asp-page="./GenerateRecoveryCodes">generezi un nou set de coduri de recuperare.</a> 
+                    înainte de a te putea autentifica cu un cod de recuperare.</p>
                 </div>
             }
             else if (Model.RecoveryCodesLeft == 1)
             {
                 <div class="alert alert-danger">
-                    <strong>You have 1 recovery code left.</strong>
-                    <p>You can <a asp-page="./GenerateRecoveryCodes">generate a new set of recovery codes</a>.</p>
+                    <strong>Mai ai un singur cod de recuperare disponibil.</strong>
+                    <p>Poți să <a asp-page="./GenerateRecoveryCodes">generezi un nou cod de recuperare.</a>.</p>
                 </div>
             }
             else if (Model.RecoveryCodesLeft <= 3)
             {
                 <div class="alert alert-warning">
-                    <strong>You have @Model.RecoveryCodesLeft recovery codes left.</strong>
-                    <p>You should <a asp-page="./GenerateRecoveryCodes">generate a new set of recovery codes</a>.</p>
+                    <strong>Mai ai @Model.RecoveryCodesLeft coduri de recuperare disponibile.</strong>
+                    <p>Poți să <a asp-page="./GenerateRecoveryCodes">generezi un nou set de coduri de recuperare.</a>.</p>
                 </div>
             }
 
             if (Model.IsMachineRemembered)
             {
                 <form method="post" style="display: inline-block">
-                    <button type="submit" class="btn btn-primary">Forget this browser</button>
+                    <button id="buton" type="submit" class="btn btn-primary">Uită acest browser</button>
                 </form>
             }
-            <a asp-page="./Disable2fa" class="btn btn-primary">Disable 2FA</a>
-            <a asp-page="./GenerateRecoveryCodes" class="btn btn-primary">Reset recovery codes</a>
+            <a asp-page="./Disable2fa" class="btn btn-primary">Dezactivează 2FA</a>
+            <a asp-page="./GenerateRecoveryCodes" class="btn btn-primary">Resetează codurile de recuperare</a>
         }
         <br />
         @if (!Model.HasAuthenticator)
@@ -59,8 +62,8 @@
     else
     {
         <div class="alert alert-danger">
-            <strong>Privacy and cookie policy have not been accepted.</strong>
-            <p>You must accept the policy before you can enable two factor authentication.</p>
+            <strong>Politica de confidențialitate și cookie-uri nu a fost acceptată.</strong>
+            <p>Trebuie să accepți politica înainte de a putea activa autentificarea 2f.</p>
         </div>
     }
 }
