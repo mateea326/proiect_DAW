@@ -336,3 +336,8 @@ textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus {
 #link:hover {
     color: #d698b5 !important;
 }
+
+#sterge {
+    background:#d698b5;
+    border: 0.05rem solid #222426;
+}
