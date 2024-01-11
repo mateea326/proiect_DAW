@@ -340,4 +340,12 @@ textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus {
 #sterge {
     background:#d698b5;
     border: 0.05rem solid #222426;
+    width:20%;
+    border-radius:15%;
+}
+
+.alert-success {
+    color: #222426 !important;
+    background-color: #f2d8e6 !important;
+    border: none;
 }
