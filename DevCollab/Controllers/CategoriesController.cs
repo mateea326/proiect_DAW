@@ -59,23 +59,20 @@ namespace DevCollab.Controllers
 
             if (Convert.ToString(HttpContext.Request.Query["search"]) !=null)
             {
-                // eliminam spatiile libere
                 search = Convert.ToString(HttpContext.Request.Query["search"]).Trim();
                 List<int> subjectIds = db.Subjects.Where
                          (
                          sb => sb.Title.Contains(search)
                          || sb.Content.Contains(search)
                          ).Select(s => s.Id).ToList();
-                // Cautare in raspunsuri (Content)
+                
                 List<int> subjectIdsOfAnswersWithSearchString = db.Answers.Where
                     (
                     a => a.Content.Contains(search)
                     ).Select(a => (int)a.SubjectId).ToList();
-                // Se formeaza o singura lista formata din toate id-urile selectate anterior
+                
                 List<int> mergedIds =subjectIds.Union(subjectIdsOfAnswersWithSearchString).ToList();
-                // Lista subiectelor care contin cuvantul cautat
-                // fie in subiect -> Title si Content
-                // fie in raspunsuri -> Content
+                
                 subjects = db.Subjects.Where(subject =>
                         mergedIds.Contains(subject.Id))
                          .Include("Category")

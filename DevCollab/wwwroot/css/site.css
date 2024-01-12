@@ -341,11 +341,22 @@ textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus {
     background:#d698b5;
     border: 0.05rem solid #222426;
     width:20%;
-    border-radius:15%;
+    border-radius:6%;
+    margin-left:1%;
 }
 
 .alert-success {
     color: #222426 !important;
     background-color: #f2d8e6 !important;
     border: none;
+}
+
+.form-check-input:checked {
+    background-color: #d698b5 !important;
+    border-color: #f2d8e6 !important;
+}
+
+.text-success {
+    --bs-text-opacity: 1;
+    color: #d698b5 !important;
 }

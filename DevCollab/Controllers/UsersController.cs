@@ -62,13 +62,12 @@ namespace DevCollab.Controllers
             }
             user.AllRoles = GetAllRoles();
             
-            var roleNames = await _userManager.GetRolesAsync(user); // Lista de nume de roluri
+            var roleNames = await _userManager.GetRolesAsync(user); 
 
-            // Cautam ID-ul rolului in baza de date
             var currentUserRole = _roleManager.Roles
                                               .Where(r => roleNames.Contains(r.Name))
                                               .Select(r => r.Id)
-                                              .First(); // Selectam 1 singur rol
+                                              .First();
             ViewBag.UserRole = currentUserRole;
 
             return View(user);
@@ -91,15 +90,13 @@ namespace DevCollab.Controllers
                 user.PhoneNumber = newData.PhoneNumber;
 
 
-                // Cautam toate rolurile din baza de date
                 var roles = db.Roles.ToList();
 
                 foreach (var role in roles)
                 {
-                    // Scoatem userul din rolurile anterioare
                     await _userManager.RemoveFromRoleAsync(user, role.Name);
                 }
-                // Adaugam noul rol selectat
+               
                 var roleName = await _roleManager.FindByIdAsync(newRole);
                 await _userManager.AddToRoleAsync(user, roleName.ToString());
 
@@ -119,7 +116,6 @@ namespace DevCollab.Controllers
                          .Where(u => u.Id == id)
                          .First();
 
-            // Delete user answers
             if (user.Answers.Count > 0)
             {
                 foreach (var comment in user.Answers)
@@ -128,7 +124,6 @@ namespace DevCollab.Controllers
                 }
             }
 
-            // Delete user subjects
             if (user.Subjects.Count > 0)
             {
                 foreach (var subject in user.Subjects)
@@ -143,7 +138,6 @@ namespace DevCollab.Controllers
 
             return RedirectToAction("Index");
         }
-
 
         [NonAction]
         public IEnumerable<SelectListItem> GetAllRoles()
