@@ -1,8 +1,4 @@
-﻿html {
-    font-size: 14px;
-}
-
-input:-webkit-autofill,
+﻿input:-webkit-autofill,
 textarea:-webkit-autofill,
 select:-webkit-autofill {
     box-shadow: 0 0 0px 1000px white inset; 
@@ -17,8 +13,11 @@ select:-webkit-autofill {
 }
 
 html {
+    font-size: 14px;
     position: relative;
     min-height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 body {
@@ -26,6 +25,8 @@ body {
     background-color: #f0ece6 !important;
     font-family: 'Global Sans Serif';
     font-size: 18px;
+    margin: 0;
+    padding: 0;
 }
 
 
@@ -359,4 +360,29 @@ textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus {
 .text-success {
     --bs-text-opacity: 1;
     color: #d698b5 !important;
+}
+/*
+#cat {
+    display: flex;
+    justify-content: center;
+    margin-top: -1.3%;
+    margin-left: -15%;
+    width: 125.7%;
+    background: #f2d8e6 !important;
+    padding: 8%;
+    position: relative;
+    z-index: 10;
+}
+
+.box {
+    --mask: radial-gradient(46.86px at 50% calc(100% - 66.00px),#000 99%,#0000 101%) calc(50% - 60px) 0/120px 100%, radial-gradient(46.86px at 50% calc(100% + 36.00px),#0000 99%,#000 101%) 50% calc(100% - 30px)/120px 100% repeat-x;
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+}*/
+
+#heart {
+    font-size: 1 rem;
+    color: #d698b5 !important;
+    margin-left: 100%;
+    padding:0;
 }
