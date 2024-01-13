@@ -16,8 +16,6 @@ html {
     font-size: 14px;
     position: relative;
     min-height: 100%;
-    margin: 0;
-    padding: 0;
 }
 
 body {
@@ -25,8 +23,6 @@ body {
     background-color: #f0ece6 !important;
     font-family: 'Global Sans Serif';
     font-size: 18px;
-    margin: 0;
-    padding: 0;
 }
 
 
